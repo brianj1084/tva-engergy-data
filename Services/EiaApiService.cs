@@ -12,8 +12,8 @@ public class EiaApiService
     public EiaApiService(HttpClient httpClient, IConfiguration configuration, ILogger<EiaApiService> logger)
     {
         _httpClient = httpClient;
-        _apiKey = configuration["EiaApi:ApiKey"]
-            ?? throw new InvalidOperationException("EIA API key not configured. Set EiaApi:ApiKey in appsettings.");
+        _apiKey = configuration["EIA_API_KEY"]
+            ?? throw new InvalidOperationException("EIA API key not configured. Set EIA_API_KEY in appsettings.");
         _logger = logger;
     }
 

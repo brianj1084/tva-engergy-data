@@ -1,3 +1,4 @@
+using DotNetEnv.Configuration;
 using tva_engery_data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ builder.Services.AddHttpClient<EiaApiService>(client =>
 {
     client.Timeout = TimeSpan.FromSeconds(30);
 });
+
+builder.Configuration.AddDotNetEnv();
 
 var app = builder.Build();
 
